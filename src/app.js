@@ -68,17 +68,22 @@ app.get('/weather', (req, res) => {
             if (error) {
                 return res.send({ error })
             }
-            instantgrid(latitude, longitude, (error, instaGridData) => {
-                if (error) {
-                    return res.send({ error })
-                }
+            // instantgrid(latitude, longitude, (error, instaGridData) => {
+            //     if (error) {
+            //         return res.send({ error })
+            //     }
 
-                res.send({
-                    forecast,
-                    location,
-                    address: req.query.address,
-                    instaGridData
-                })
+            //     res.send({
+            //         forecast,
+            //         location,
+            //         address: req.query.address,
+            //         instaGridData
+            //     })
+            // })
+            res.send({
+                forecast,
+                location,
+                address: req.query.address
             })
         })
     })
